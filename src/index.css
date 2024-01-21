@@ -1,13 +1,116 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  --color1: #393646;
+  --color2: #4F4557;
+  --color3: #6D5D6E;
+  --color4: #FAEEE0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  background-color: var(--color2);
+}
+
+#drum-machine {
+  border: 1px solid var(--color3);  
+  border-radius: 25px;
+  background-color: var(--color3);
+  padding: 30px;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column-reverse;
+  box-shadow: 5px 5px 10px black;
+  transition: 1s ease-in-out;
+}
+
+
+.buttons {
+  width: 300px; 
+  height: 300px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  padding: 10px;
+}
+
+.drum-pad {
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--color4);
+  border-radius: 30px;
+  background: var(--color4);
+  color: var(--color2);
+  font-size: 30px;
+  font-weight: 800;
+  transition: 0.5s ease-in-out;
+}
+
+.drum-pad:hover {
+  background: var(--color2);
+  color: var(--color4)
+}
+
+.painel {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  width: 300px;
+  margin-bottom: 10px;
+  margin: 0 auto 10px;
+  height: 150px;
+}
+
+.screen {
+  height: 32%;
+  background-color: var(--color4);
+  color: var(--color1);
+  width: 100%;
+  margin: 10px auto;
+  font-size: 25px;
+  border: 1px solid var(--color1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+}
+
+#volume-slider {
+  width: 50%;
+  -webkit-appearance: none;
+  appearance: slider-horizontal;
+  outline: none;
+  opacity: 0.7;
+  background: var(--color4);
+  transition: opacity .2s;
+  -webkit-transition: opacity .2s;
+  position: relative;
+  top: 25px;
+  left: 150px
+}
+
+#volume-slider:hover {
+  opacity: 1;
+}
+
+.switch {
+  width: 30%;
+  margin-left: 10px;
+  height: 50px;
+  border-radius: 25px;
+  position: relative;
+  top: -10px;
+  background-color: var(--color4);
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--color1)
 }
