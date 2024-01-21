@@ -145,7 +145,7 @@ class Keyboard extends React.Component {
   }
 
   playMusic(code) {   
-    let keyArray = this.props.banco.map(item => item.keyCode === code);
+    let keyArray = this.props.banco.map(item => item.keyCode == code);
     let keyPressed = null;
     for(let i = 0; i <= keyArray.length; i++) {
       if(keyArray[i]) {
